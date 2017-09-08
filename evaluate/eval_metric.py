@@ -127,8 +127,6 @@ class MApMetric(mx.metric.EvalMetric):
         for i in range(labels[0].shape[0]):
             # get as numpy arrays
             label = labels[0][i].asnumpy()
-            if np.sum(label[:, 0] >= 0) < 1:
-                continue
             pred = preds[self.pred_idx][i].asnumpy()
             # calculate for each class
             while (pred.shape[0] > 0):
